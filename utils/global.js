@@ -1,1 +1,1 @@
-global.codeTable = [];
+global.codeTable = new Map();

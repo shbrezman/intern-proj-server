@@ -16,12 +16,14 @@ function userController(){
     function createUser(req, res){
         var newUser = new userModel(req.body);
        
-        codeTable.forEach(element => {
-            if(element.phoneNumber = req.body.phoneNumber){
+        newUser.password = codeTable.get(req.body.phoneNumber);
+        
+        // codeTable.forEach(element => {
+        //     if(element.phoneNumber = req.body.phoneNumber){
                 
-                newUser.password = element.code;
-            }
-        });
+        //         newUser.password = element.code;
+        //     }
+        // });
 
         newUser.save(function(err, newDoc){
             if(err){

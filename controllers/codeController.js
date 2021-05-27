@@ -26,19 +26,14 @@ function codeController(){
 
     function sendTxt(req, res){
         var password = (Math.floor(Math.random() * 8999) + 1000).toString();
-        codeTable = [...codeTable, {phoneNumber: req.body.to, code: crypt.cryptPassword(password)}];
+        codeTable.set(req.body.to, crypt.cryptPassword(password));
         console.log(codeTable)
         res.status(200).send({msg : password});
     }
 
     function varifacationCode(req, res){
 
-        var code;
-        codeTable.forEach(element => {
-            if(req.phoneNumber = element.phoneNumber){
-                code = element.code;
-            }
-        });
+        var code = codeTable.get(req.body.phoneNumber);
         
         res.send({msg: crypt.compare(req.body.password, code)});
     }
