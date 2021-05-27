@@ -7,7 +7,7 @@ var userSchema = new schema({
         type: String
     },
     password: {
-        type: Number,
+        type: String,
        
     },
     age: {

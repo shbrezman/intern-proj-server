@@ -17,14 +17,15 @@ function userController(){
         var newUser = new userModel(req.body);
        
         codeTable.forEach(element => {
-            if(element.phoneNumber == req.body.phoneNumber){
+            if(element.phoneNumber = req.body.phoneNumber){
+                
                 newUser.password = element.code;
             }
         });
 
         newUser.save(function(err, newDoc){
             if(err){
-                res.status(409).send(err.message)
+                res.status(409).send({msg: err.message})
             }
             res.status(201).send(newDoc);
           })
