@@ -29,11 +29,15 @@ function codeController(){
         codeTable.set(req.body.to, crypt.cryptPassword(password));
         console.log(codeTable)
         res.status(200).send({msg : password});
+        setTimeout(() => {
+            codeTable.delete(req.body.to)
+        }, 1000 * 60 * 30);
     }
 
     function varifacationCode(req, res){
 
         var code = codeTable.get(req.body.phoneNumber);
+        
         
         res.send({msg: crypt.compare(req.body.password, code)});
     }
