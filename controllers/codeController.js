@@ -26,6 +26,7 @@ function codeController(){
 
     function sendTxt(req, res){
         var password = (Math.floor(Math.random() * 8999) + 1000).toString();
+        
         codeTable.set(req.body.to, crypt.cryptPassword(password));
         console.log(codeTable)
         res.status(200).send({msg : password});

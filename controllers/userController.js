@@ -8,7 +8,7 @@ function userController(){
             if(err){
                 return res.status(500).send({});
             }
-            return res.status(200).send(list);
+            return res.status(200).send({list: list});
         })
         
     }
@@ -27,21 +27,21 @@ function userController(){
 
         newUser.save(function(err, newDoc){
             if(err){
-                res.status(409).send({msg: err.message})
+              return res.status(409).send({msg: err.message})
             }
-            res.status(201).send(newDoc);
+            return res.status(201).send({newDoc: newDoc});
           })
     }
 
     function getUser(req, res){
         userModel.findOne({phoneNumber: req.params.phoneNumber}, function(err, user){
             if(err){
-                res.status(500).send({"msg": "db problem"})
+                return res.status(500).send({"msg": "db problem"})
             }
             if(!user){
-                res.status(404).send({error: "user not found"})
+                return res.status(404).send({error: "user not found"})
             }
-            res.status(200).send(user);
+            return res.status(200).send(user);
         })
     }
 
@@ -54,7 +54,7 @@ function userController(){
             if(! result.n){
                 return res.status(404).send();
             }
-            res.status(200).send("update seccuflly");
+            res.status(200).send({msg: "update seccuflly"});
 
         })
     }

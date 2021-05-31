@@ -16,7 +16,7 @@ var userSchema = new schema({
     },
     id: {
         type: String,
-        unique: true
+        
     },
     passportNumber: {
         type: String,
@@ -24,7 +24,7 @@ var userSchema = new schema({
     },
     phoneNumber: {
         type: String,
-        
+        unique: true
     },
     img: {
         type: String,
@@ -68,6 +68,6 @@ var userSchema = new schema({
 
 
 
-module.exports = mongoose.model('user2', userSchema);
+module.exports = mongoose.model('user', userSchema);
 
 
