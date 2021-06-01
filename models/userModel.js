@@ -26,6 +26,12 @@ var userSchema = new schema({
         type: String,
         unique: true
     },
+    roleType: {
+        type: String
+    },
+    roleNumber: {
+        type: Number
+    },
     img: {
         type: String,
     },
