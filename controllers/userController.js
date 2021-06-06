@@ -4,11 +4,11 @@ const global = require('../utils/global')
 function userController(){
 
     function getAllUsers(req, res){
-        userModel.find(function(err, list){
+        userModel.find(req.body, function(err, list){
             if(err){
                 return res.status(500).send({});
             }
-            return res.status(200).send({list: list});
+            return res.status(200).send(list);
         })
         
     }

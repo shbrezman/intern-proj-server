@@ -14,7 +14,7 @@ const vonage = new Vonage({
 userRoutes.post("/varifacation", smsController.varifacationCode);
 userRoutes.post("/sendSms", smsController.sendTxt);
 userRoutes.post("/create", userController.createUser);
-userRoutes.get("/getAll", userController.getAllUsers);
+userRoutes.post("/getAllUsers", userController.getAllUsers);
 userRoutes.get("/getUser/:phoneNumber", userController.getUser);
 userRoutes.put("/updateUser/:_id", userController.updateUser);
 
