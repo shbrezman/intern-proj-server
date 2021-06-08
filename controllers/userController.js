@@ -4,10 +4,13 @@ const global = require('../utils/global')
 function userController(){
 
     function getAllUsers(req, res){
+        
         userModel.find(req.body, function(err, list){
             if(err){
+                
                 return res.status(500).send({});
             }
+            
             return res.status(200).send(list);
         })
         
@@ -16,20 +19,14 @@ function userController(){
     function createUser(req, res){
         var newUser = new userModel(req.body);
        
-        newUser.password = codeTable.get(req.body.phoneNumber);
-        
-        // codeTable.forEach(element => {
-        //     if(element.phoneNumber = req.body.phoneNumber){
-                
-        //         newUser.password = element.code;
-        //     }
-        // });
-
         newUser.save(function(err, newDoc){
+            console.log('im here');
             if(err){
-              return res.status(409).send({msg: err.message})
+                console.log('im error');
+              return res.status(400).send({msg: err.message})
             }
-            return res.status(201).send({newDoc: newDoc});
+            console.log('im here2');
+            return res.status(201).send(newDoc);
           })
     }
 
