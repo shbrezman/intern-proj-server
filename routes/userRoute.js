@@ -17,6 +17,7 @@ userRoutes.post("/create", userController.createUser);
 userRoutes.post("/getAllUsers", userController.getAllUsers);
 userRoutes.get("/getUser/:phoneNumber", userController.getUser);
 userRoutes.put("/updateUser/:_id", userController.updateUser);
+userRoutes.put("/updateUsers", userController.updateUsers);
 
 
 module.exports = userRoutes;
