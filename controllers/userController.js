@@ -43,14 +43,18 @@ function userController(){
     }
 
     function updateUser(req, res) {
-        userModel.updateOne({_id: req.params._id}, {$set: req.body}, function(err, result){
+        userModel.updateOne({id: req.body.id}, {tests: req.body.tests}, function(err, result){
+            console.log('im in update');
             if(err) {
+                console.log('im in err');
                 return res.status(500).send();
             }
 
             if(! result.n){
+                console.log('im in ! result.n');
                 return res.status(404).send();
             }
+            console.log('im success');
             res.status(200).send({msg: "update seccuflly"});
 
         })
