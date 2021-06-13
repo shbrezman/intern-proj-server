@@ -20,12 +20,12 @@ function userController(){
         var newUser = new userModel(req.body);
        
         newUser.save(function(err, newDoc){
-            console.log('im here');
+            
             if(err){
-                console.log('im error');
+               
               return res.status(400).send({msg: err.message})
             }
-            console.log('im here2');
+            
             return res.status(201).send(newDoc);
           })
     }

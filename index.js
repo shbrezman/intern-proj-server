@@ -1,4 +1,5 @@
 const express = require("express");
+const q = require("./models/questionModel");
 const app = express();
 const mogoose = require('mongoose');
 const port = 8080;

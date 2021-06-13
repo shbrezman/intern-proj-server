@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const schema = mongoose.Schema;
 
 var userSchema = new schema({
@@ -59,15 +60,21 @@ var userSchema = new schema({
     residancyYear: {
         type: Number,
     },
+    
     tests : [{
         title: String,
         date : Date,
-        score : Number
+        score : Number,
+        examineeName: String,
+        questions: []
+        
          }],
     practices : [{
-       title: String,
-       date : Date,
-       score : Number
+        title: String,
+        date : Date,
+        score : Number,
+        examineeName: String,
+        questions: []
         }]
 
 });
