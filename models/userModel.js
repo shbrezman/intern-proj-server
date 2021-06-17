@@ -19,6 +19,8 @@ var userSchema = new schema({
         type: String,
         
     },
+    token: String,
+    
     passportNumber: {
         type: String,
         
