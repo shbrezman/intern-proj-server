@@ -16,7 +16,6 @@ function authContrroler(){
             return res.status(200).send(user);
         })
     }
-
     return {
         getUser
     }
