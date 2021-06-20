@@ -13,10 +13,10 @@ const vonage = new Vonage({
 
 // userRoutes.post("/varifacation", smsController.varifacationCode);
 // userRoutes.post("/sendSms", smsController.sendTxt);
-userRoutes.post("/create", userController.createUser);
+//userRoutes.post("/create", userController.createUser);
 userRoutes.post("/getAllUsers", userController.getAllUsers);
 // userRoutes.get("/getUser/:phoneNumber", userController.getUser);
-userRoutes.put("/updateUser", userController.updateUser);
+
 userRoutes.put("/updateUsers", userController.updateUsers);
 
 

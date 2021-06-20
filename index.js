@@ -23,7 +23,7 @@ app.use("/api", function(req, res, next){
     
     if(userToken.isNotExpired()){
         req.user = userToken
-        console.log('is working');
+        console.log('token chacked');
         return next()
     } else{
         res.status(400).send('no access!!!')
