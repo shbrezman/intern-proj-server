@@ -18,6 +18,8 @@ function authContrroler(){
     }
 
     function createUser(req, res){
+        req.body.token = new tokenModel(true, null, req.body.name, req.body.roleNumber, req.body._id).token;
+        console.log(req.body);
         var newUser = new userModel(req.body);
        
         newUser.save(function(err, newDoc){
@@ -31,28 +33,10 @@ function authContrroler(){
           })
     }
 
-    function updateUser(req, res) {
-        userModel.updateOne({id: req.body.id}, {tests: req.body.tests}, function(err, result){
-            
-            if(err) {
-                console.log('im in err');
-                return res.status(500).send();
-            }
-
-            if(! result.n){
-                console.log('im in ! result.n');
-                return res.status(404).send();
-            }
-            console.log(req.body.tests);
-            res.status(200).send({msg: "update seccuflly"});
-
-        })
-    }
-
+    
     return {
         getUser,
-        createUser,
-        updateUser
+        createUser
     }
 }
 

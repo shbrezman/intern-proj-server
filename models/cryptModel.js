@@ -1,7 +1,7 @@
 var encrypt = require('../utils/encryption');
-var ttl = 1000 * 60 * 30;
+var ttl = 1000 * 60 * 60;
 var split = "-!-"
-// changh after
+
 
 function userToken(isNewToken, token, name, roll, _id){
     if (isNewToken) {

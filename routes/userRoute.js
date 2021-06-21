@@ -10,14 +10,9 @@ const vonage = new Vonage({
   apiSecret: "ofHyW6HzPK2NtZkb"
 })
 
-
-// userRoutes.post("/varifacation", smsController.varifacationCode);
-// userRoutes.post("/sendSms", smsController.sendTxt);
-//userRoutes.post("/create", userController.createUser);
 userRoutes.post("/getAllUsers", userController.getAllUsers);
-// userRoutes.get("/getUser/:phoneNumber", userController.getUser);
-
 userRoutes.put("/updateUsers", userController.updateUsers);
+userRoutes.put("/updateUser", userController.updateUser);
 
 
 module.exports = userRoutes;
