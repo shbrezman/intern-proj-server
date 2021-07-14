@@ -4,7 +4,7 @@ const app = express();
 const mogoose = require('mongoose');
 const cryptModel = require('./models/cryptModel');
 const encryption = require('./utils/encryption')
-const port = 8080;
+const port = process.env.PORT || 8080;
 //const dbPath = 'mongodb://127.0.0.1:27017/internDB';
 const dbPath = 'mongodb+srv://internsDB:412336195@internscluster.lujbp.mongodb.net/internsDB?retryWrites=true&w=majority';
 
